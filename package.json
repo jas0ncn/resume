@@ -12,7 +12,11 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
-    "vue": "^2.1.0"
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
+    "vue": "^2.1.0",
+    "vue-router": "^2.1.1",
+    "vuex": "^2.1.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
