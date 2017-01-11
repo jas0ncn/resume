@@ -1,0 +1,63 @@
+/**
+ * mix in
+ */
+.border-radius(@radius: 4px) {
+  border-radius: @radius;
+}
+.box-shadow(@color: rgba(0,0,0,.3)) {
+  box-shadow: 0 0 20px @color;
+}
+
+/**
+ * slide up in
+ * for next route
+ */
+.slideUpIn-enter-active {
+  .box-shadow(rgba(0,0,0,.4));
+  animation: slideUpIn-in 800ms ease;
+}
+.slideUpIn-leave-active {
+  .box-shadow(rgba(0,0,0,.4));
+  animation: slide-out 800ms ease;
+}
+.slideDownIn-enter-active {
+  .box-shadow(rgba(0,0,0,.4));
+  animation: slideDownIn-in 800ms ease;
+}
+.slideDownIn-leave-active {
+  .box-shadow(rgba(0,0,0,.4));
+  animation: slide-out 800ms ease;
+}
+
+// Keyframes
+@keyframes slideUpIn-in {
+  0% {
+    transform: translateY(100%);
+    opacity: .5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownIn-in {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(.9);
+    opacity: .9;
+  }
+}
+
