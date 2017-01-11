@@ -45,13 +45,23 @@ const routeMap = [{
 const routes = routeMap.map((v, i) => {
   return {
     path: v.path === 'index' ? '/' : `/${v.path}`,
+    alias: v.path,
     component: resolve => require([`./pages/${v.path}/index.vue`], resolve),
-    weight: i
+    meta: {
+      weight: i
+    }
   }
 })
 
+// redirect /index to /
+routes.push({
+  path: '/index',
+  redirect: '/'
+})
+
 export default new VueRouter({
-  routes
+  routes,
+  linkActiveClass: 'active-link'
 })
 
 export { routeMap }
