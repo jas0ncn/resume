@@ -13,5 +13,5 @@ export default {
 <style lang="less">
 @import './assets/less/_reset.less';
 @import './assets/less/common.less';
-@import './assets/less/pages/entry.less';
+@import './assets/less/entry.less';
 </style>
