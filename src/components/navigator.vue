@@ -15,8 +15,34 @@ import { routeMap } from '../router'
 export default {
   name: 'navigator',
   data: () => ({
-    routeMap
-  })
+    routeMap,
+    scrollingLock: false
+  }),
+  mounted () {
+    // scrolling listener
+    window.onmousewheel = e => {
+      e.stopPropagation()
+      e.preventDefault()
+
+      if (this.scrollingLock) return
+
+      setTimeout(() => {
+        this.scrollingLock = false
+      }, 800)
+
+      if (e.wheelDelta < -20) {
+        this.scrollingLock = true
+        if (this.$route.meta.weight < routeMap.length) {
+          this.$router.push({ path: routeMap[this.$route.meta.weight + 1].path })
+        }
+      } else if (e.wheelDelta > 20) {
+        this.scrollingLock = true
+        if (this.$route.meta.weight > 0) {
+          this.$router.push({ path: routeMap[this.$route.meta.weight - 1].path })
+        }
+      }
+    }
+  }
 }
 </script>
 
@@ -135,6 +161,5 @@ export default {
       }
     }
   }
-
 }
 </style>
