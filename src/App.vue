@@ -1,6 +1,7 @@
 <template>
   <div class="page entry">
     <navigator />
+    <language-switcher />
     <transition :name="transitionName">
       <router-view></router-view>
     </transition>
@@ -8,7 +9,8 @@
 </template>
 
 <script>
-import navigator from './components/navigator.vue'
+import navigator from './components/navigator'
+import languageSwitcher from './components/languageSwitcher'
 
 export default {
   name: 'entry',
@@ -21,7 +23,8 @@ export default {
     }
   },
   components: {
-    navigator
+    navigator,
+    languageSwitcher
   }
 }
 </script>
