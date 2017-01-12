@@ -30,7 +30,7 @@ const routeMap = [{
 }, {
   path: 'experiences',
   cn: '在校经历',
-  en: 'Experiences in school'
+  en: 'Experiences'
 }, {
   path: 'contacts',
   cn: '联系我~',
