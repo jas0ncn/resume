@@ -1,3 +1,131 @@
 .index {
 	background: radial-gradient(ellipse farthest-corner, #FFFFFF, #EEEEEE);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .avatar {
+    width: 150px;
+    height: 150px;
+    margin-top: -60px;
+
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      user-select: none;
+    }
+  }
+
+  .name {
+    margin-top: 20px;
+
+    color: #444;
+    font-size: 32px;
+    line-height: 60px;
+
+    display: block;
+  }
+
+  .shortDescription {
+    color: #777;
+    line-height: 60px;
+  }
+
+  .social {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .blog {
+      .socialIcon(@color: rgba(0,0,0,.5); @activeColor: #6ca397; blog)
+    }
+    .github {
+      .socialIcon(@color: rgba(0,0,0,.5); @activeColor: #444444; github)
+    }
+    .ui {
+      .socialIcon(@color: rgba(0,0,0,.5); @activeColor: #3498db; ui)
+    }
+    .zhihu {
+      .socialIcon(@color: rgba(0,0,0,.5); @activeColor: #0f88eb; zhihu)
+    }
+    .weibo {
+      .socialIcon(@color: rgba(0,0,0,.5); @activeColor: #fa7d3c; weibo)
+    }
+  }
 }
+
+/* social icons */
+.socialIcon(@color: #333; @activeColor: #4078c0; @animationName: draw) {
+  position: relative;
+
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  
+  .svgAndAnimations(@color; @activeColor; @animationName);
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      fill: @color;
+      transition: all 500ms;
+    }
+
+    &:hover {
+      svg {
+        fill: @activeColor;
+      }
+    }
+  }
+}
+.svgAndAnimations(@color: #333; @activeColor: #4078c0; @animationName: draw) {
+  .circle {
+    fill: transparent;
+    stroke-width: 1px;
+    stroke: @color;
+    stroke-dasharray: 0 200;
+    stroke-dashoffset: -200;
+    transition: all 300ms;
+  }
+
+  &:hover .circle {
+    -webkit-animation: @animationName 500ms ease forwards;
+    animation: @animationName 500ms ease forwards;
+  }
+
+  @keyframes @animationName {
+    0% {
+      stroke-dasharray: 0 200;
+      stroke-dashoffset: -200;
+    }
+    100% {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 0;
+      stroke-width: 1px;
+      stroke: @activeColor;
+    }
+  }
+}
+/* social icon end*/

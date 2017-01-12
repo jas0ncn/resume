@@ -9,13 +9,17 @@ import { routeMap } from '../router'
 export default {
   cn: {
     website: {
-      title: 'Jason'
+      title: 'Jason',
+      name: '陈俊毅',
+      shortDescription: '大三学生，前端工程师进阶中...'
     },
     route: routeMap.map(v => v.cn)
   },
   en: {
     website: {
-      title: 'Jason'
+      title: 'Jason',
+      name: 'Jason Chen',
+      shortDescription: 'A student, front-end developer...'
     },
     route: routeMap.map(v => v.en)
   }
