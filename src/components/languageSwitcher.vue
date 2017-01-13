@@ -53,7 +53,7 @@ export default {
       height: 34px;
       min-width: 34px;
 
-      color: #777;
+      color: rgba(0,0,0,.3);
 
       display: flex;
       justify-content: center;
@@ -72,7 +72,7 @@ export default {
       width: 34px;
       height: 34px;
       
-      background: #333;
+      background: rgba(0,0,0,.75);
       border-radius: 17px;
       transition: all 300ms ease;
 

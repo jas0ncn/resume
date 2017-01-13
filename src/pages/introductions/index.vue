@@ -1,6 +1,6 @@
 <template>
   <div class="page introductions">
-    <p>个人简介</p>
+    <h1 class="title">{{ $store.state.data.route[$route.meta.weight] }}</h1>
   </div>
 </template>
 
