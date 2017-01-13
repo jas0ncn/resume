@@ -26,17 +26,23 @@ export default {
 
       if (this.scrollingLock) return
 
-      setTimeout(() => {
-        this.scrollingLock = false
-      }, 800)
-
-      if (e.wheelDelta < -20) {
+      if (e.wheelDelta < -40) {
         this.scrollingLock = true
-        if (this.$route.meta.weight < routeMap.length) {
+
+        setTimeout(() => {
+          this.scrollingLock = false
+        }, 700)
+
+        if (this.$route.meta.weight < routeMap.length - 1) {
           this.$router.push({ path: routeMap[this.$route.meta.weight + 1].path })
         }
-      } else if (e.wheelDelta > 20) {
+      } else if (e.wheelDelta > 40) {
         this.scrollingLock = true
+
+        setTimeout(() => {
+          this.scrollingLock = false
+        }, 700)
+
         if (this.$route.meta.weight > 0) {
           this.$router.push({ path: routeMap[this.$route.meta.weight - 1].path })
         }
@@ -109,7 +115,7 @@ export default {
       line-height: 14px;
       font-weight: bold;
       background: rgba(0,0,0,.7);
-      border-radius: 3px 1px 1px 3px;
+      border-radius: 3px 0 0 3px;
 
       transform: translateX(50px);
       opacity: 0;
