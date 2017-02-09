@@ -1,3 +1,5 @@
+@import '../../assets/less/animations.less';
+
 .index {
 	background: radial-gradient(ellipse farthest-corner, #FFFFFF, #EEEEEE);
   display: flex;
@@ -19,6 +21,8 @@
     justify-content: center;
     align-items: center;
 
+    .animation(@duration: 500ms);
+
     img {
       width: 100%;
       user-select: none;
@@ -32,12 +36,16 @@
     font-size: 32px;
     line-height: 60px;
 
+    .animation(@duration: 500ms);
+
     display: block;
   }
 
   .shortDescription {
     color: #777;
     line-height: 60px;
+
+    .animation(@duration: 500ms);
   }
 
   .social {
@@ -47,6 +55,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .animation(@duration: 500ms);
 
     .blog {
       .socialIcon(@color: rgba(0,0,0,.5); @activeColor: #6ca397; blog)
@@ -62,6 +72,21 @@
     }
     .weibo {
       .socialIcon(@color: rgba(0,0,0,.5); @activeColor: #fa7d3c; weibo)
+    }
+  }
+
+  .footer {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+
+    a {
+      color: #999;
+      font-size: 14px;
+      line-height: 40px;
+      text-decoration: none;
     }
   }
 }
