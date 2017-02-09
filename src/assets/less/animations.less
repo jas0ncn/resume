@@ -29,6 +29,25 @@
   animation: slide-out 800ms ease;
 }
 
+/**
+ * animation
+ */
+.animation (@name: fade; @duration: 800ms; @timeFunction: ease; @delay: 300ms; @direction: normal; @fillMode: forwards) {
+  .transitionFromTransparent(@name);
+  animation: @name @duration @timeFunction @delay @direction @fillMode;
+}
+
+.transitionFromTransparent (@name) when (@name = fade), (@name = fadeIn) {
+  opacity: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  .animation();
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+}
+
 // Keyframes
 @keyframes slideUpIn-in {
   0% {
@@ -58,6 +77,15 @@
   100% {
     transform: scale(.9);
     opacity: .9;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
