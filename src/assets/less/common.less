@@ -8,14 +8,30 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-
   background: #FFF;
 
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .title {
+    line-height: 80px;
     text-align: center;
     color: rgba(255,255,255,.9);
     text-shadow: 0 0 6px rgba(0,0,0,.2);
+  }
+
+  .pagebody {
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
