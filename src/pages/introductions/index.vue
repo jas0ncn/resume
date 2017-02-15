@@ -12,7 +12,7 @@
             class="infoItem"
             v-for="(v, i) in $store.state.data.website.infomations"
             v-if="i >= index * 3 && i < (index + 1) * 3">
-            <img :src="`/static/svgs/info/${v.icon}`" :alt="v.key" :title="v.key">
+            <img :src="v.icon" :alt="v.key" :title="v.key">
             <p>{{ v.value }}</p>
           </div>
           <div class="placeholder"></div>
