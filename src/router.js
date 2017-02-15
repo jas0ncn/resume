@@ -13,7 +13,7 @@ const routeMap = [{
   en: 'About me'
 }, {
   path: 'skills',
-  cn: '技能树',
+  cn: '技能',
   en: 'Skills'
 }, {
   path: 'projects',
