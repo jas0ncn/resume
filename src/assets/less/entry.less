@@ -4,5 +4,30 @@
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background: #333;
+
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+	.page {
+		opacity: 0;
+		transform: translateY(100%) translateZ(0);
+		transition: transform 800ms ease, background 300ms ease;
+	}
+
+	.currentPage {
+		opacity: 1;
+		transform: translateY(0) translateZ(0);
+	}
+
+	.prePage {
+		opacity: 1;
+		transform: translateY(-100%) translateZ(0);
+	}
+
+	.nextPage {
+		opacity: 1;
+		transform: translateY(100%) translateZ(0);
+	}
 }

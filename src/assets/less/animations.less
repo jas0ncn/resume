@@ -14,7 +14,8 @@
  */
 .slideUpIn-enter-active {
   .box-shadow(rgba(0,0,0,.4));
-  animation: slideUpIn-in 800ms ease;
+  transform: translateY(0) translateZ(0);
+  opacity: 1;
 }
 .slideUpIn-leave-active {
   .box-shadow(rgba(0,0,0,.4));
@@ -51,31 +52,31 @@
 // Keyframes
 @keyframes slideUpIn-in {
   0% {
-    transform: translateY(100%);
+    transform: translateY(100%) translateZ(0);
     opacity: .5;
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
     opacity: 1;
   }
 }
 
 @keyframes slideDownIn-in {
   0% {
-    transform: translateY(-100%);
+    transform: translateY(-100%) translateZ(0);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
   }
 }
 
 @keyframes slide-out {
   0% {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
     opacity: 1;
   }
   100% {
-    transform: scale(.9);
+    transform: scale(.9) translateZ(0);
     opacity: .9;
   }
 }

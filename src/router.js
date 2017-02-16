@@ -1,9 +1,4 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
-
-// route map
-const routeMap = [{
+export default [{
   path: 'index',
   cn: '简介',
   en: 'Home'
@@ -21,7 +16,7 @@ const routeMap = [{
   en: 'Projects'
 }, {
   path: 'designs',
-  cn: '设计稿',
+  cn: '设计作品',
   en: 'Designs'
 }, {
   path: 'articles',
@@ -40,28 +35,3 @@ const routeMap = [{
   cn: '关于本页',
   en: 'About this site'
 }]
-
-// create router
-const routes = routeMap.map((v, i) => {
-  return {
-    path: v.path === 'index' ? '/' : `/${v.path}`,
-    alias: v.path,
-    component: resolve => require([`./pages/${v.path}/index.vue`], resolve),
-    meta: {
-      weight: i
-    }
-  }
-})
-
-// redirect /index to /
-routes.push({
-  path: '/index',
-  redirect: '/'
-})
-
-export default new VueRouter({
-  routes,
-  linkActiveClass: 'active-link'
-})
-
-export { routeMap }

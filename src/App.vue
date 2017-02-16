@@ -1,30 +1,164 @@
 <template>
-  <div class="page entry">
-    <navigator />
+  <div class="entry">
+    <navigator :id="currentPage" @linkTo="linkTo" />
     <language-switcher />
-    <transition :name="transitionName">
-      <router-view></router-view>
-    </transition>
+    <index
+      :id="currentPage"
+      :class="{
+        currentPage: currentPage === 0,
+        prePage: currentPage > 0,
+        nextPage: currentPage < 0
+      }"
+    />
+    <introductions
+      :id="currentPage"
+      :class="{
+        currentPage: currentPage === 1,
+        prePage: currentPage > 1,
+        nextPage: currentPage < 1
+      }"
+    />
+    <skills
+      :id="currentPage"
+      :class="{
+        currentPage: currentPage === 2,
+        prePage: currentPage > 2,
+        nextPage: currentPage < 2
+      }"
+    />
+    <projects
+      :id="currentPage"
+      :class="{
+        currentPage: currentPage === 3,
+        prePage: currentPage > 3,
+        nextPage: currentPage < 3
+      }"
+    />
+    <designs
+      :id="currentPage"
+      :class="{
+        currentPage: currentPage === 4,
+        prePage: currentPage > 4,
+        nextPage: currentPage < 4
+      }"
+    />
+    <articles
+      :id="currentPage"
+      :class="{
+        currentPage: currentPage === 5,
+        prePage: currentPage > 5,
+        nextPage: currentPage < 5
+      }"
+    />
+    <experiences
+      :id="currentPage"
+      :class="{
+        currentPage: currentPage === 6,
+        prePage: currentPage > 6,
+        nextPage: currentPage < 6
+      }"
+    />
+    <contacts
+      :id="currentPage"
+      :class="{
+        currentPage: currentPage === 7,
+        prePage: currentPage > 7,
+        nextPage: currentPage < 7
+      }"
+    />
+    <about
+      :id="currentPage"
+      :class="{
+        currentPage: currentPage === 8,
+        prePage: currentPage > 8,
+        nextPage: currentPage < 8
+      }"
+    />
   </div>
 </template>
 
 <script>
+/**
+ * import components
+ **/
 import navigator from './components/navigator'
 import languageSwitcher from './components/languageSwitcher'
+/**
+ * import router for generator a route map
+ **/
+import route from './router'
+/**
+ * import pages
+ **/
+import index from './pages/index'
+import introductions from './pages/introductions'
+import skills from './pages/skills'
+import projects from './pages/projects'
+import designs from './pages/designs'
+import articles from './pages/articles'
+import experiences from './pages/experiences'
+import contacts from './pages/contacts'
+import about from './pages/about'
 
 export default {
   name: 'entry',
   data: () => ({
-    transitionName: 'slideUpIn'
+    transitionName: 'slideUpIn',
+    currentPage: 0,
+    routeMap: []
   }),
-  watch: {
-    '$route' (to, from) {
-      this.transitionName = from.meta.weight && to.meta.weight < from.meta.weight ? 'slideDownIn' : 'slideUpIn'
+  beforeMount () {
+    this.routeMap = route.map((v, i) => {
+      v.id = i
+      return v
+    })
+  },
+  mounted () {
+    // scrolling listener
+    window.onmousewheel = e => {
+      e.stopPropagation()
+      e.preventDefault()
+
+      if (this.scrollingLock) return
+
+      if (e.wheelDelta < -40) {
+        this.scrollingLock = true
+
+        setTimeout(() => {
+          this.scrollingLock = false
+        }, 700)
+
+        if (this.currentPage === this.routeMap.length - 1) return
+        else this.currentPage++
+      } else if (e.wheelDelta > 40) {
+        this.scrollingLock = true
+
+        setTimeout(() => {
+          this.scrollingLock = false
+        }, 700)
+
+        if (this.currentPage === 0) return
+        else this.currentPage--
+      }
+    }
+  },
+  methods: {
+    linkTo (id) {
+      this.currentPage = id
     }
   },
   components: {
     navigator,
-    languageSwitcher
+    languageSwitcher,
+    index,
+    introductions,
+    skills,
+    projects,
+    designs,
+    articles,
+    experiences,
+    contacts,
+    about
   }
 }
 </script>

@@ -1,12 +1,13 @@
 <template>
   <div class="page contacts">
-    <p>{{ $store.state.data.route[$route.meta.weight] }}</p>
+    <p>{{ $store.state.data.route[id] }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'contacts'
+  name: 'contacts',
+  props: ['id']
 }
 </script>
 

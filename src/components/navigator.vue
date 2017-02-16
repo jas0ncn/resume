@@ -1,52 +1,33 @@
 <template>
   <div class="container">
-    <div class="item" v-for="route in routeMap">
-      <router-link :to="route.path" class="link" :class="{ 'active-link': $route.path === '/' && route.path === 'index' }">
+    <div class="item" v-for="(route, i) in routeMap">
+      <a
+        class="link"
+        :class="{
+          'active-link': id === i
+        }"
+        @click="linkTo(i)"
+      >
         <img :src="`/static/svgs/navigator/${route.path}.svg`">
-      </router-link>
+      </a>
       <span class="description">{{ route[$store.state.lang] }}</span>
     </div>
   </div>
 </template>
 
 <script>
-import { routeMap } from '../router'
+import routeMap from '../router'
 
 export default {
   name: 'navigator',
+  props: ['id'],
   data: () => ({
     routeMap,
     scrollingLock: false
   }),
-  mounted () {
-    // scrolling listener
-    window.onmousewheel = e => {
-      e.stopPropagation()
-      e.preventDefault()
-
-      if (this.scrollingLock) return
-
-      if (e.wheelDelta < -40) {
-        this.scrollingLock = true
-
-        setTimeout(() => {
-          this.scrollingLock = false
-        }, 700)
-
-        if (this.$route.meta.weight < routeMap.length - 1) {
-          this.$router.push({ path: routeMap[this.$route.meta.weight + 1].path })
-        }
-      } else if (e.wheelDelta > 40) {
-        this.scrollingLock = true
-
-        setTimeout(() => {
-          this.scrollingLock = false
-        }, 700)
-
-        if (this.$route.meta.weight > 0) {
-          this.$router.push({ path: routeMap[this.$route.meta.weight - 1].path })
-        }
-      }
+  methods: {
+    linkTo (id) {
+      this.$emit('linkTo', id)
     }
   }
 }
@@ -58,14 +39,11 @@ export default {
   top: 0;
   right: 0;
   padding-right: 40px;
-
   height: 100%;
   width: 200px;
 
   pointer-events: none;
-
-  z-index: 20;
-
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: center;

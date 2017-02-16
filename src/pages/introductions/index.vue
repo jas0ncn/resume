@@ -1,6 +1,6 @@
 <template>
   <div class="page introductions">
-    <h1 class="title">{{ $store.state.data.route[$route.meta.weight] }}</h1>
+    <h1 class="title">{{ $store.state.data.route[id] }}</h1>
     <div class="pagebody">
       <div class="selfIntroduction">
         <p>{{ $store.state.data.website.description }}</p>
@@ -23,7 +23,8 @@
 
 <script>
 export default {
-  name: 'introductions'
+  name: 'introductions',
+  props: ['id']
 }
 </script>
 

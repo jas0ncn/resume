@@ -1,6 +1,6 @@
 <template>
   <div class="page skills">
-    <h1 class="title">{{ $store.state.data.route[$route.meta.weight] }}</h1>
+    <h1 class="title">{{ $store.state.data.route[id] }}</h1>
     <div class="pagebody">
       <div class="cardContainer">
         <div
@@ -17,7 +17,8 @@
 
 <script>
 export default {
-  name: 'skills'
+  name: 'skills',
+  props: ['id']
 }
 </script>
 

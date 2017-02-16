@@ -1,12 +1,13 @@
 <template>
   <div class="page about">
-    <p>{{ $store.state.data.route[$route.meta.weight] }}</p>
+    <p>{{ $store.state.data.route[id] }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'about'
+  name: 'about',
+  props: ['id']
 }
 </script>
 
