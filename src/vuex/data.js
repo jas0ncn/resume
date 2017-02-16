@@ -4,7 +4,7 @@
  * (Now support Chinese and English)
  */
 // import route map
-import { routeMap } from '../router'
+import routeMap from '../router'
 
 export default {
   cn: {
@@ -95,7 +95,29 @@ export default {
         url: 'https://github.com/heyszu/szuschedule-app',
         qrcode: '/static/images/projects/szucheduleapp_qrcode.png'
       }],
-      projectRefer: '在我的 Github 查看更多项目'
+      projectRefer: '在我的 Github 查看更多项目',
+      designs: {
+        jingmei: {
+          background: `#859398`,
+          mainImage: '/static/images/designs/mockup_jingmei.png',
+          title: '静魅',
+          subTitle: '魅族 FlymeOS 主题',
+          desc: '这是 2014 年我参加魅族主题大赛的参赛作品，设计风格采用了无棱角图标，搭配饱和度较低的配色，与山水背景衬托出一种静和清爽的感觉。',
+          link: 'http://www.ui.cn/detail/26910.html',
+          linkRefer: '去 ui.cn 查看详情',
+          posi: 'left'
+        },
+        mi4Mockup: {
+          background: '#222',
+          mainImage: '/static/images/designs/mockup_mi4.png',
+          title: '小米 4 模型',
+          subTitle: '手机展示模型 Psd',
+          desc: '临摹小米官网的小米手机4模型。全矢量绘制，屏幕部分采用智能对象，可嵌入展示图片。',
+          link: 'http://www.ui.cn/detail/21758.html',
+          linkRefer: '去 ui.cn 查看详情',
+          posi: 'left'
+        }
+      }
     },
     route: routeMap.map(v => v.cn)
   },

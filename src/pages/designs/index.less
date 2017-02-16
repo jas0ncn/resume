@@ -1,3 +1,104 @@
-.introductions {
-	background: #FFF;
+.designs {
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  .pagebody {
+		position: relative;
+
+		.section {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transform: translateX(100%) translateZ(0);
+			transition: all 1s ease;
+
+			.desc {
+				width: 500px;
+
+				.descTitle, .subTitle, .description, .link {
+					color: #FFF;
+					text-shadow: 0 3px 5px rgba(0,0,0,.4)
+				}
+
+				.descTitle {
+					font-size: 56px;
+					line-height: 80px;
+				}
+
+				.subTitle {
+					font-size: 28px;
+					line-height: 60px;
+					font-weight: normal;
+				}
+
+				.description {
+					font-size: 18px;
+					line-height: 30px;
+					text-align: justify;
+				}
+
+				.link {
+					margin-top: 20px;
+					padding: 10px 0;
+					width: 300px;
+					font-size: 18px;
+					text-decoration: none;
+					border: 1px solid #FFF;
+					border-radius: 6px;
+					transition: all 300ms ease;
+
+					svg {
+						fill: #FFF;
+					}
+
+					&:hover {
+						background: rgba(255,255,255,.2);
+					}
+				}
+			}
+
+			.mockup {
+				height: 500px;
+				user-select: none;
+			}
+		}
+
+		.currentSection {
+			opacity: 1;
+			transform: translateX(0) translateZ(0);
+		}
+
+		.preSection {
+			transform: translateX(-100%) translateZ(0);
+		}
+
+		.prePage, .nextPage {
+			position: absolute;
+			bottom: 0;
+			opacity: .6;
+			cursor: pointer;
+			transition: opacity 300ms ease;
+
+			svg {
+				fill: #FFF;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		.prePage {
+			left: 0;
+		}
+
+		.nextPage {
+			right: 0;
+		}
+	}
 }
