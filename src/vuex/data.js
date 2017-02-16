@@ -128,23 +128,23 @@ export default {
       shortDescription: 'A student, front-end developer...',
       description: `I started learning front-end development and participating in development and maintenance of a number of WeChat public accounts in school when I was a freshman at university. At the same time, I began to follow the open source community and the front-end ecosystem closely.`,
       infomations: [{
-        icon: 'birthday.svg',
+        icon: '/static/svgs/info/birthday.svg',
         key: 'Birthday',
         value: '1996.2.11'
       }, {
-        icon: 'education.svg',
+        icon: '/static/svgs/info/education.svg',
         key: 'Education',
         value: 'Communication Engineering · Shenzhen University'
       }, {
-        icon: 'nowCity.svg',
+        icon: '/static/svgs/info/nowCity.svg',
         key: 'Live in',
         value: 'Shenzhen, Guangdong, RPC'
       }, {
-        icon: 'email.svg',
+        icon: '/static/svgs/info/email.svg',
         key: 'Email',
         value: 'jason@iszu.cn'
       }, {
-        icon: 'phone.svg',
+        icon: '/static/svgs/info/phone.svg',
         key: 'Phone Number',
         value: '+86 13128931074'
       }],
@@ -209,7 +209,29 @@ export default {
         url: 'https://github.com/heyszu/szuschedule-app',
         qrcode: '/static/images/projects/szucheduleapp_qrcode.png'
       }],
-      projectRefer: 'See more projects on my Github'
+      projectRefer: 'See more projects on my Github',
+      designs: {
+        jingmei: {
+          background: `#859398`,
+          mainImage: '/static/images/designs/mockup_jingmei.png',
+          title: '静魅',
+          subTitle: '魅族 FlymeOS 主题',
+          desc: '这是 2014 年我参加魅族主题大赛的参赛作品，设计风格采用了无棱角图标，搭配饱和度较低的配色，与山水背景衬托出一种静和清爽的感觉。',
+          link: 'http://www.ui.cn/detail/26910.html',
+          linkRefer: '去 ui.cn 查看详情',
+          posi: 'left'
+        },
+        mi4Mockup: {
+          background: '#222',
+          mainImage: '/static/images/designs/mockup_mi4.png',
+          title: '小米 4 模型',
+          subTitle: '手机展示模型 Psd',
+          desc: '临摹小米官网的小米手机4模型。全矢量绘制，屏幕部分采用智能对象，可嵌入展示图片。',
+          link: 'http://www.ui.cn/detail/21758.html',
+          linkRefer: '去 ui.cn 查看详情',
+          posi: 'left'
+        }
+      }
     },
     route: routeMap.map(v => v.en)
   }
