@@ -149,7 +149,7 @@
       padding: 10px;
       background: linear-gradient(to bottom, #FFF , #F0F0F0);
       border-radius: 6px;
-      transform: translateY(30px);
+      transform: translateY(30px) translateZ(0);
       box-shadow: 0 5px 15px rgba(0,0,0,.3);
 
       .qrcode {
@@ -172,10 +172,10 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px) translateZ(0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
   }
 }
