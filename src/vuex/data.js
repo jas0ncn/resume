@@ -78,7 +78,24 @@ export default {
           background: 'linear-gradient(to bottom, #1d0f4f , #130a33)',
           'border-color': '#1d0f4f'
         }
-      }]
+      }],
+      projects: [{
+        image: '/static/images/projects/goszu.jpg',
+        desc: '一个为深圳大学学生开发的网址导航，收集了大部分学生常用或者难找的网站。前端使用 Vue.js 开发，后端使用 PHP 和 MySQL 搭建，用户首次访问即缓存网站数据在 LocalStorage 里面。',
+        url: 'http://www.goszu.com/',
+        qrcode: '/static/images/projects/goszu_qrcode.png'
+      }, {
+        image: '/static/images/projects/powerusage.jpg',
+        desc: '这是一个宿舍电费查询工具，每天会自动抓取当天剩余可用电量，并可根据最近一周使用情况计算出剩余可用的天数。同时，在电费不足的时候，会自动通过微信公众号发送模板消息提醒用户。',
+        url: 'http://www.wacxt.cn/powerusage/',
+        qrcode: '/static/images/projects/powerusage_qrcode.png'
+      }, {
+        image: '/static/images/projects/szucheduleapp.jpg',
+        desc: '一款为深圳大学学生开发的课表查询 App，可以自动同步教务处网站上的课程信息，随时随地查询课程表及课程详细信息。是一款使用 Vue.js 三件套和 Cordove 开发的一款 Hybrid App。',
+        url: 'https://github.com/heyszu/szuschedule-app',
+        qrcode: '/static/images/projects/szucheduleapp_qrcode.png'
+      }],
+      projectRefer: '在我的 Github 查看更多项目'
     },
     route: routeMap.map(v => v.cn)
   },
@@ -153,7 +170,24 @@ export default {
           background: 'linear-gradient(to bottom, #1d0f4f , #130a33)',
           'border-color': '#1d0f4f'
         }
-      }]
+      }],
+      projects: [{
+        image: '/static/images/projects/goszu.jpg',
+        desc: 'A website navigation for students of Shenzhen University. It collects many commonly used websites and some websites hard to find. This site is powered by Vue.js and Node.js for backend.',
+        url: 'http://www.goszu.com/',
+        qrcode: '/static/images/projects/goszu_qrcode.png'
+      }, {
+        image: '/static/images/projects/powerusage.jpg',
+        desc: `It's a website that can query the remaining electricity of dormitory, predict available days based on your usage, and also can push low-power-warning via Wechat.`,
+        url: 'http://www.wacxt.cn/powerusage/',
+        qrcode: '/static/images/projects/powerusage_qrcode.png'
+      }, {
+        image: '/static/images/projects/szucheduleapp.jpg',
+        desc: `A app can auto sync class schedule from server. You can inquire your class infomations everywhere. It's based on Cordova and Vue.js and Node.js for backend. `,
+        url: 'https://github.com/heyszu/szuschedule-app',
+        qrcode: '/static/images/projects/szucheduleapp_qrcode.png'
+      }],
+      projectRefer: 'See more projects on my Github'
     },
     route: routeMap.map(v => v.en)
   }
