@@ -50,28 +50,12 @@
         nextPage: currentPage < 5
       }"
     />
-    <experiences
+    <about
       id="6"
       :class="{
         currentPage: currentPage === 6,
         prePage: currentPage > 6,
         nextPage: currentPage < 6
-      }"
-    />
-    <contacts
-      id="7"
-      :class="{
-        currentPage: currentPage === 7,
-        prePage: currentPage > 7,
-        nextPage: currentPage < 7
-      }"
-    />
-    <about
-      id="8"
-      :class="{
-        currentPage: currentPage === 8,
-        prePage: currentPage > 8,
-        nextPage: currentPage < 8
       }"
     />
   </div>
@@ -96,8 +80,6 @@ import skills from './pages/skills'
 import projects from './pages/projects'
 import designs from './pages/designs'
 import articles from './pages/articles'
-import experiences from './pages/experiences'
-import contacts from './pages/contacts'
 import about from './pages/about'
 
 export default {
@@ -156,8 +138,6 @@ export default {
     projects,
     designs,
     articles,
-    experiences,
-    contacts,
     about
   }
 }

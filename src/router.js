@@ -23,14 +23,6 @@ export default [{
   cn: '个人博客',
   en: 'Articles'
 }, {
-  path: 'experiences',
-  cn: '在校经历',
-  en: 'Experiences'
-}, {
-  path: 'contacts',
-  cn: '联系我~',
-  en: 'Contact me'
-}, {
   path: 'about',
   cn: '关于本页',
   en: 'About this site'
