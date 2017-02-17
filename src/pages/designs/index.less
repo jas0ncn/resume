@@ -22,7 +22,7 @@
 
 				.descTitle, .subTitle, .description, .link {
 					color: #FFF;
-					text-shadow: 0 2px 2px rgba(0,0,0,.3)
+					text-shadow: 0 2px 2px rgba(0,0,0,.3);
 				}
 
 				.descTitle {
@@ -99,6 +99,48 @@
 
 		.nextPageBtn {
 			right: 0;
+		}
+	}
+}
+
+.logos {
+	.title {
+		color: #333;
+		text-shadow: none;
+	}
+
+	.pagebody {
+		.section {
+			.desc {
+				.descTitle, .subTitle, .description, .link {
+					color: #444;
+					text-shadow: none;
+				}
+
+				.link {
+					border: 1px solid #444;
+
+					svg {
+						fill: #444;
+					}
+
+					&:hover {
+						background: rgba(0,0,0,.2);
+					}
+				}
+			}
+		}
+
+		.prePageBtn, .nextPageBtn {
+			opacity: .6;
+
+			svg {
+				fill: #444;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
 		}
 	}
 }

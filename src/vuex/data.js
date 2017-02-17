@@ -116,6 +116,16 @@ export default {
           link: 'http://www.ui.cn/detail/21758.html',
           linkRefer: '去 ui.cn 查看详情',
           posi: 'left'
+        },
+        logos: {
+          background: '#F8F8F8',
+          mainImage: '/static/images/designs/logos.png',
+          title: 'LOGO',
+          subTitle: '',
+          desc: '为一些公众号的和网站所设计的Logo',
+          link: '',
+          linkRefer: '',
+          posi: 'left'
         }
       }
     },
@@ -209,25 +219,35 @@ export default {
         url: 'https://github.com/heyszu/szuschedule-app',
         qrcode: '/static/images/projects/szucheduleapp_qrcode.png'
       }],
-      projectRefer: 'See more projects on my Github',
+      projectRefer: 'See more projects in my Github',
       designs: {
         jingmei: {
           background: `#859398`,
           mainImage: '/static/images/designs/mockup_jingmei.png',
-          title: '静魅',
-          subTitle: '魅族 FlymeOS 主题',
-          desc: '这是 2014 年我参加魅族主题大赛的参赛作品，设计风格采用了无棱角图标，搭配饱和度较低的配色，与山水背景衬托出一种静和清爽的感觉。',
+          title: 'Silence',
+          subTitle: 'Theme for FlymeOS',
+          desc: 'This is a theme designing for MEIZU Flyme Theme Competition 2014. No edges and corners icons, with low saturation color and the wallpaper to bring out a quiet feeling.',
           link: 'http://www.ui.cn/detail/26910.html',
-          linkRefer: '去 ui.cn 查看详情',
+          linkRefer: 'See detail in ui.cn',
           posi: 'left'
         },
         mi4Mockup: {
           background: '#222',
           mainImage: '/static/images/designs/mockup_mi4.png',
-          title: '小米 4 模型',
-          subTitle: '手机展示模型 Psd',
-          desc: '临摹小米官网的小米手机4模型。全矢量绘制，屏幕部分采用智能对象，可嵌入展示图片。',
+          title: 'Mi4 Mockup',
+          subTitle: 'Phone mockup psd',
+          desc: 'Copy painting from offcial website of Xiaomi 4. Fully vector painting, the screen use intelligent object, can be embedded in the display picture.',
           link: 'http://www.ui.cn/detail/21758.html',
+          linkRefer: 'See detail in ui.cn',
+          posi: 'left'
+        },
+        logos: {
+          background: '#F8F8F8',
+          mainImage: '/static/images/designs/logos.png',
+          title: 'Logos',
+          subTitle: '',
+          desc: 'Design for some websites and Wechat Public Accounts.',
+          link: '',
           linkRefer: '去 ui.cn 查看详情',
           posi: 'left'
         }

@@ -1,7 +1,8 @@
 <template>
   <div class="page designs" :style="{
     background: $store.state.data.website.designs[sections[currentIndex]].background
-  }">
+  }"
+  :class="sections[currentIndex]">
     <h1 class="title">{{ $store.state.data.route[id] }}</h1>
     <div class="pagebody">
       <section
@@ -25,7 +26,9 @@
           <p class="description">
             {{ $store.state.data.website.designs[design].desc }}
           </p>
-          <a class="flexRow allCenter link" target="_blank" :href="$store.state.data.website.designs[design].link">
+          <a class="flexRow allCenter link" target="_blank"
+            v-if="$store.state.data.website.designs[design].link"
+            :href="$store.state.data.website.designs[design].link">
             <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24">
                 <path d="M630.88 528.36c-7.264 0-14.512-0.576-21.664-1.736l73.896-73.936 0.568-0.376a27.52 27.52 0 0 0 3.336-2.872l100.792-101.056c30.944-31.016 30.944-81.488 0-112.504a78.68 78.68 0 0 0-56.112-23.304 78.848 78.848 0 0 0-56.152 23.304l-96.68 96.96-4.304 4.192-76.824 76.832c-6.424-42.224 7.424-85.632 37.76-116.064l100.92-101.208a133.68 133.68 0 0 1 95.264-39.576c35.984 0 69.824 14.056 95.272 39.576 52.552 52.688 52.552 138.408 0 191.08L726.024 488.904a133.48 133.48 0 0 1-95.144 39.456z"></path>
                 <path d="M391.624 661.72a28.304 28.304 0 0 1-28.256-28.264c0-7.856 3.224-15.184 9.096-20.656L612.56 372.664c5.648-6.064 12.976-9.288 20.832-9.288a28.28 28.28 0 0 1 28.248 28.256 28.24 28.24 0 0 1-8.16 19.864l-6.112 6.232 0.064 0.048-230.576 230.584-0.056-0.032-5.088 4.936a27.92 27.92 0 0 1-20.088 8.456z"></path>
