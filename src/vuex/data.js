@@ -127,7 +127,38 @@ export default {
           linkRefer: '',
           posi: 'left'
         }
-      }
+      },
+      articles: [{
+        title: '【翻译】2017 年前端工程师该学点什么',
+        thumb: '今天看百度的 FEX 技术周刊，看到了一篇文章《What to learn in 2017 if you’re a frontend developer》发现写的很不错！也提供了很多干货，就当做练习阅读能力，便把这篇文章翻译成中文。',
+        url: 'https://blog.ijason.cc/2017/01/03/what-to-learn-in-2017-if-youre-a-frontend-developer.html',
+        time: '2017-01-03'
+      }, {
+        title: 'JavaScript 的 this 指向',
+        thumb: '学一个语言，其实不仅仅是要学会它的语法，其实最重要的还是学会一个语言的思想。在我看来，JavaScript 原因的精髓，就是动态。JavaScript 是著名的弱类型动态语言，动态语言的特性也为 JavaScript 增添了几分趣味性。',
+        url: 'https://blog.ijason.cc/2016/10/30/javascript-this.html',
+        time: '2016-10-30'
+      }, {
+        title: 'yarn 尝鲜',
+        thumb: '看微博的时候无意中看到某个大神转了一条微博说 Facebook 发布了一个新的 JavaScript 包管理工具，一开始没怎么在意，后来在知乎看到了关于 yarn 的问题，就好奇的点了进去，决定来尝鲜一下。',
+        url: 'https://blog.ijason.cc/2016/10/12/have-a-taste-of-yarn.html',
+        time: '2016-10-12'
+      }, {
+        title: '你好，Vue2',
+        thumb: '用 Vue 也有 9 个月了，还记得当时第一次见到双向绑定的欣喜~Vue2 也在万众期待中发布了，基于官方的 Migration from Vue 1.x 来细数一下 Vue2 那些很可能会影响到我们使用的细节。',
+        url: 'https://blog.ijason.cc/2016/10/01/hey-new-vue.html',
+        time: '2016-10-01'
+      }, {
+        title: 'ECMAScript6 学习笔记',
+        thumb: '接触 ES6 也有段时间了，最先的感觉可能是模块化、箭头函数这些的，慢慢也觉得是应该认真的看一看 ES6 本身，在学习的过程中，也就有了这篇文章，所以这篇文章更重要的是提醒我自己关于一些 ES6 的知识点，而不是完整的学习 ES6。',
+        url: 'https://blog.ijason.cc/2016/08/09/es6-note.html',
+        time: '2016-06-16'
+      }, {
+        title: 'JSONP新思考：CSST',
+        thumb: '前天早上在逛尤大的微博（@尤小右）的时候，看到他转了一条微博，关于 csst，第一次看到这个词，好奇的点进了 Github 的链接。实践了一把，由此有了这篇博文。',
+        url: 'https://blog.ijason.cc/2016/05/10/new-idea-for-jsonp-csst.html',
+        time: '2016-05-10'
+      }]
     },
     route: routeMap.map(v => v.cn)
   },
