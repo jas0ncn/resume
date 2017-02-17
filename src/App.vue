@@ -3,7 +3,7 @@
     <navigator :id="currentPage" @linkTo="linkTo" />
     <language-switcher />
     <index
-      :id="0"
+      id="0"
       :class="{
         currentPage: currentPage === 0,
         prePage: currentPage > 0,
@@ -11,7 +11,7 @@
       }"
     />
     <introductions
-      :id="1"
+      id="1"
       :class="{
         currentPage: currentPage === 1,
         prePage: currentPage > 1,
@@ -19,7 +19,7 @@
       }"
     />
     <skills
-      :id="2"
+      id="2"
       :class="{
         currentPage: currentPage === 2,
         prePage: currentPage > 2,
@@ -27,7 +27,7 @@
       }"
     />
     <projects
-      :id="3"
+      id="3"
       :class="{
         currentPage: currentPage === 3,
         prePage: currentPage > 3,
@@ -35,7 +35,7 @@
       }"
     />
     <designs
-      :id="4"
+      id="4"
       :class="{
         currentPage: currentPage === 4,
         prePage: currentPage > 4,
@@ -43,7 +43,7 @@
       }"
     />
     <articles
-      :id="5"
+      id="5"
       :class="{
         currentPage: currentPage === 5,
         prePage: currentPage > 5,
@@ -51,7 +51,7 @@
       }"
     />
     <experiences
-      :id="6"
+      id="6"
       :class="{
         currentPage: currentPage === 6,
         prePage: currentPage > 6,
@@ -59,7 +59,7 @@
       }"
     />
     <contacts
-      :id="7"
+      id="7"
       :class="{
         currentPage: currentPage === 7,
         prePage: currentPage > 7,
@@ -67,7 +67,7 @@
       }"
     />
     <about
-      :id="8"
+      id="8"
       :class="{
         currentPage: currentPage === 8,
         prePage: currentPage > 8,
