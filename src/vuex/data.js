@@ -10,7 +10,7 @@ const base = {
   title: 'Jason 的简历',
   name: '陈俊毅',
   shortDescription: '大三学生，前端工程师进阶中...',
-  description: '大一开始我就负责学校多个微信公众号的开发和运营，并开始接触、关注开源社区和前端生态系统。',
+  description: '高中接触 Web 开发和设计，上了大学正式学期前端和 PHP，在学校不间断负责多个公众号、小程序的开发。',
   infomations: [{
     icon: '/static/svgs/info/birthday.svg',
     key: '生日',
