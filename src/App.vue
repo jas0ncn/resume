@@ -122,10 +122,13 @@ export default {
       this.currentPage = id
     },
     touchmove (e) {
+      e.preventDefault()
       if (this.touchStartX !== 0) return
       this.touchStartX = e.changedTouches[0].screenY
     },
     touchend (e) {
+      e.preventDefault()
+
       if (this.touchStartX === 0) return
 
       const touchEndX = e.changedTouches[0].screenY
