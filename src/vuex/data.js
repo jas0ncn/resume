@@ -239,7 +239,7 @@ const en = {
 export default {
   cn: {
     website: base,
-    route: routeMap.map(v => v.en)
+    route: routeMap.map(v => v.cn)
   },
   en: {
     website: Object.assign({}, base, en),

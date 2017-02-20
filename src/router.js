@@ -22,8 +22,4 @@ export default [{
   path: 'articles',
   cn: '个人博客',
   en: 'Articles'
-}, {
-  path: 'about',
-  cn: '关于本页',
-  en: 'About this site'
 }]

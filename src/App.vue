@@ -50,14 +50,6 @@
         nextPage: currentPage < 5
       }"
     />
-    <about
-      id="6"
-      :class="{
-        currentPage: currentPage === 6,
-        prePage: currentPage > 6,
-        nextPage: currentPage < 6
-      }"
-    />
   </div>
 </template>
 
@@ -80,7 +72,6 @@ import skills from './pages/skills'
 import projects from './pages/projects'
 import designs from './pages/designs'
 import articles from './pages/articles'
-import about from './pages/about'
 
 export default {
   name: 'entry',
@@ -137,8 +128,7 @@ export default {
     skills,
     projects,
     designs,
-    articles,
-    about
+    articles
   }
 }
 </script>
