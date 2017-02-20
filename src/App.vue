@@ -122,20 +122,17 @@ export default {
       this.currentPage = id
     },
     touchmove (e) {
-      e.preventDefault()
       if (this.touchStartX !== 0) return
       this.touchStartX = e.changedTouches[0].screenY
     },
     touchend (e) {
-      e.preventDefault()
-
       if (this.touchStartX === 0) return
 
       const touchEndX = e.changedTouches[0].screenY
 
       if (this.scrollingLock) return
 
-      if (this.touchStartX - touchEndX > 100) {
+      if (this.touchStartX - touchEndX > 80) {
         this.scrollingLock = true
 
         setTimeout(() => {
@@ -144,7 +141,7 @@ export default {
 
         if (this.currentPage === this.routeMap.length - 1) return
         else this.currentPage++
-      } else if (this.touchStartX - touchEndX < -100) {
+      } else if (this.touchStartX - touchEndX < -80) {
         this.scrollingLock = true
 
         setTimeout(() => {

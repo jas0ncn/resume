@@ -67,21 +67,18 @@ export default {
       this.showQrcode = false
     },
     touchmove (e) {
-      e.preventDefault()
       if (this.touchStartX !== 0) return
       this.touchStartX = e.changedTouches[0].screenX
     },
     touchend (e) {
-      e.preventDefault()
-
       if (this.touchStartX === 0) return
 
       const touchEndX = e.changedTouches[0].screenX
 
-      if (this.touchStartX - touchEndX > 30) {
+      if (this.touchStartX - touchEndX > 20) {
         if (this.currentPage === this.$store.state.data.website.projects.length - 1) return
         else this.currentPage++
-      } else if (this.touchStartX - touchEndX < -30) {
+      } else if (this.touchStartX - touchEndX < -20) {
         if (this.currentPage === 0) return
         else this.currentPage--
       }
