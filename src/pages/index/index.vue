@@ -1,7 +1,7 @@
 <template>
   <div class="page index">
     <div class="avatar">
-      <img src="/static/avatar.jpg">
+      <img src="https://cdn.ijason.cc/static/avatar.jpg">
     </div>
     <h1 class="name">{{ $store.state.data.website.name }}</h1>
     <p class="shortDescription">{{ $store.state.data.website.shortDescription }}</p>
