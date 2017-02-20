@@ -79,7 +79,8 @@ export default {
     transitionName: 'slideUpIn',
     currentPage: 0,
     routeMap: [],
-    touchStartX: 0
+    touchStartX: 0,
+    outdatedbrowser: false
   }),
   beforeMount () {
     this.routeMap = route.map((v, i) => {

@@ -43,7 +43,7 @@ export default {
   width: 200px;
 
   pointer-events: none;
-  z-index: 100;
+  z-index: 30;
   display: flex;
   flex-direction: column;
   justify-content: center;
