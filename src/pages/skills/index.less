@@ -1,5 +1,4 @@
 .skills {
-  padding: 40px;
   background: #FF5F6D;
   background: linear-gradient(to left, #FF5F6D , #FFC371);
 
@@ -62,6 +61,28 @@
         animation: slideUp 500ms ease forwards;
         opacity: 0;
         z-index: 0;
+      }
+    }
+  }
+}
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .skills {
+    .pagebody {
+
+      .cardContainer {
+        width: 100%;
+
+        .card {
+          margin: 0 10px 10px 10px;
+          width: 110px;
+          height: 110px;
+
+          img {
+            max-height: 50px;
+          }
+        }
       }
     }
   }

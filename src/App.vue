@@ -1,5 +1,5 @@
 <template>
-  <div class="entry">
+  <div class="entry" @touchmove="touchmove" @touchend="touchend">
     <navigator :id="currentPage" @linkTo="linkTo" />
     <language-switcher />
     <index
@@ -78,7 +78,8 @@ export default {
   data: () => ({
     transitionName: 'slideUpIn',
     currentPage: 0,
-    routeMap: []
+    routeMap: [],
+    touchStartX: 0
   }),
   beforeMount () {
     this.routeMap = route.map((v, i) => {
@@ -118,6 +119,42 @@ export default {
   methods: {
     linkTo (id) {
       this.currentPage = id
+    },
+    touchmove (e) {
+      e.preventDefault()
+      if (this.touchStartX !== 0) return
+      this.touchStartX = e.changedTouches[0].screenY
+    },
+    touchend (e) {
+      e.preventDefault()
+
+      if (this.touchStartX === 0) return
+
+      const touchEndX = e.changedTouches[0].screenY
+
+      if (this.scrollingLock) return
+
+      if (this.touchStartX - touchEndX > 100) {
+        this.scrollingLock = true
+
+        setTimeout(() => {
+          this.scrollingLock = false
+        }, 700)
+
+        if (this.currentPage === this.routeMap.length - 1) return
+        else this.currentPage++
+      } else if (this.touchStartX - touchEndX < -100) {
+        this.scrollingLock = true
+
+        setTimeout(() => {
+          this.scrollingLock = false
+        }, 700)
+
+        if (this.currentPage === 0) return
+        else this.currentPage--
+      }
+
+      this.touchStartX = 0
     }
   },
   components: {

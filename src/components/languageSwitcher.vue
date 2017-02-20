@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="selector" :class="$store.state.lang">
-      <span class="langCn" @click="changeLanguage('cn')">中</span>
-      <span class="langEn" @click="changeLanguage('en')">Eng</span>
+      <span class="langCn" @click="changeLanguage('cn')" @touchstart="changeLanguage('cn')">中</span>
+      <span class="langEn" @click="changeLanguage('en')" @touchstart="changeLanguage('en')">Eng</span>
     </div>
   </div>
 </template>
@@ -100,6 +100,13 @@ export default {
       width: 43px;
       transform: translateX(34px);
     }
+  }
+}
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .container {
+    display: none;
   }
 }
 </style>

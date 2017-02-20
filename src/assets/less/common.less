@@ -5,7 +5,9 @@ body {
 }
 
 .page {
-	position: absolute;
+	position: fixed;
+  top: 0;
+  left: 0;
   padding: 40px;
 	width: 100%;
 	height: 100%;
@@ -51,4 +53,15 @@ body {
 .allCenter {
   justify-content: center;
   align-items: center;
+}
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .page {
+    padding: 10px 20px;
+
+    .pagebody {
+      overflow: visible;
+    }
+  }
 }

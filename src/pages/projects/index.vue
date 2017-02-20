@@ -2,10 +2,18 @@
   <div class="page projects">
     <h1 class="title">{{ $store.state.data.route[id] }}</h1>
     <div class="pagebody">
-      <div class="cardContainer">
+      <div class="cardContainer" @touchmove="touchmove" @touchend="touchend">
         <div
           class="card"
-          v-for="project in $store.state.data.website.projects"
+          v-for="(project, idx) in $store.state.data.website.projects"
+          :class="{
+            currentSection: idx === currentPage,
+            preSection: idx < currentPage,
+            nextSection: idx > currentPage
+          }"
+          :style="{
+            'z-index': idx < currentPage ? idx : $store.state.data.website.projects.length - idx
+          }"
           >
           <img class="screenshot" :src="project.image">
           <p class="description">{{ project.desc }}</p>
@@ -17,7 +25,7 @@
                 <path d="M292.288 867a133.672 133.672 0 0 1-95.264-39.56c-52.536-52.688-52.536-138.44 0-191.128l100.92-101.184a133.456 133.456 0 0 1 95.104-39.456c7.128 0 14.224 0.56 21.248 1.68l-76.152 76.136a10.84 10.84 0 0 0-0.672 0.528L236.152 675.64c-30.928 31.016-30.928 81.472 0 112.472a78.792 78.792 0 0 0 56.136 23.312 78.696 78.696 0 0 0 56.112-23.312l100.92-101.168c0.656-0.656 1.24-1.392 1.8-2.128l75.056-75.144c6.608 42.392-7.216 86-37.688 116.592l-100.96 101.176a133.6 133.6 0 0 1-95.24 39.56z"></path>
               </svg>
             </a>
-            <button class="btn" @click="showQrcodeFunc(project.qrcode)" v-if="project.qrcode">
+            <button class="btn qrcodebtn" @click="showQrcodeFunc(project.qrcode)" v-if="project.qrcode">
               <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18">
                 <path d="M796.444444 1024 796.444444 910.222222 910.222222 910.222222 910.222222 796.444444 1024 796.444444 1024 1024 796.444444 1024ZM910.222222 568.888889 1024 568.888889 1024 682.666667 910.222222 682.666667 910.222222 568.888889ZM967.111111 455.111111 625.777778 455.111111C594.375111 455.111111 568.888889 429.624889 568.888889 398.222222L568.888889 56.888889C568.888889 25.486222 594.375111 0 625.777778 0L967.111111 0C998.513778 0 1024 25.486222 1024 56.888889L1024 398.222222C1024 429.624889 998.513778 455.111111 967.111111 455.111111ZM910.222222 113.777778 682.666667 113.777778 682.666667 341.333333 910.222222 341.333333 910.222222 113.777778ZM853.333333 284.444444 739.555556 284.444444 739.555556 170.666667 853.333333 170.666667 853.333333 284.444444ZM398.222222 1024 56.888889 1024C25.486222 1024 0 998.513778 0 967.111111L0 625.777778C0 594.375111 25.486222 568.888889 56.888889 568.888889L398.222222 568.888889C429.624889 568.888889 455.111111 594.375111 455.111111 625.777778L455.111111 967.111111C455.111111 998.513778 429.624889 1024 398.222222 1024ZM341.333333 682.666667 113.777778 682.666667 113.777778 910.222222 341.333333 910.222222 341.333333 682.666667ZM284.444444 853.333333 170.666667 853.333333 170.666667 739.555556 284.444444 739.555556 284.444444 853.333333ZM398.222222 455.111111 56.888889 455.111111C25.486222 455.111111 0 429.624889 0 398.222222L0 56.888889C0 25.486222 25.486222 0 56.888889 0L398.222222 0C429.624889 0 455.111111 25.486222 455.111111 56.888889L455.111111 398.222222C455.111111 429.624889 429.624889 455.111111 398.222222 455.111111ZM341.333333 113.777778 113.777778 113.777778 113.777778 341.333333 341.333333 341.333333 341.333333 113.777778ZM284.444444 284.444444 170.666667 284.444444 170.666667 170.666667 284.444444 170.666667 284.444444 284.444444ZM796.444444 796.444444 568.888889 796.444444 568.888889 568.888889 796.444444 568.888889 796.444444 796.444444ZM682.666667 1024 568.888889 1024 568.888889 910.222222 682.666667 910.222222 682.666667 1024Z"></path>
               </svg>
@@ -46,7 +54,9 @@ export default {
   props: ['id'],
   data: () => ({
     activeQrcodeUrl: '',
-    showQrcode: false
+    showQrcode: false,
+    touchStartY: 0,
+    currentPage: 0
   }),
   methods: {
     showQrcodeFunc (url) {
@@ -55,6 +65,28 @@ export default {
     },
     hideQrcode () {
       this.showQrcode = false
+    },
+    touchmove (e) {
+      e.preventDefault()
+      if (this.touchStartX !== 0) return
+      this.touchStartX = e.changedTouches[0].screenX
+    },
+    touchend (e) {
+      e.preventDefault()
+
+      if (this.touchStartX === 0) return
+
+      const touchEndX = e.changedTouches[0].screenX
+
+      if (this.touchStartX - touchEndX > 30) {
+        if (this.currentPage === this.$store.state.data.website.projects.length - 1) return
+        else this.currentPage++
+      } else if (this.touchStartX - touchEndX < -30) {
+        if (this.currentPage === 0) return
+        else this.currentPage--
+      }
+
+      this.touchStartX = 0
     }
   }
 }

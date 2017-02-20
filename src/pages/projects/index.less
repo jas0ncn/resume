@@ -1,5 +1,4 @@
 .projects {
-	padding: 40px;
 	background: #283048;
   background: linear-gradient(to left, #283048 , #859398);
 
@@ -54,6 +53,7 @@
 
         .tool {
           position: absolute;
+          left: 0;
           bottom: 0;
           width: 100%;
           padding: 10px;
@@ -167,6 +167,62 @@
 
     .qrcodeContainer {
       transform: translateY(0) translateZ(0);
+    }
+  }
+}
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .projects {
+    .pagebody {
+      .cardContainer {
+        position: relative;
+        width: 100%;
+        height: 420px;
+
+        .card {
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 280px;
+          margin: -200px 0 0 -140px;
+          transition: all 300ms ease;
+
+          .tool {
+            .btn {
+              width: 100%;
+            }
+
+            .qrcodebtn {
+              display: none;
+            }
+          }
+
+          &:hover {
+            box-shadow: 0 5px 10px rgba(0,0,0,.1);
+          }
+        }
+
+        .currentSection {
+          transform: translateX(0) translateZ(0);
+          box-shadow: 0 12px 24px rgba(0,0,0,.3);
+        }
+
+        .preSection {
+          transform: translateX(-300px) translateZ(0);
+        }
+
+        .nextSection {
+          transform: translateX(300px) translateZ(0);
+        }
+      }
+
+      .seeGithub {
+        margin-top: 10px;
+        width: 280px;
+        opacity: 1;
+      }
     }
   }
 }

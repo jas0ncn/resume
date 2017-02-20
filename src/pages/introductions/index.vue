@@ -17,6 +17,14 @@
           </div>
           <div class="placeholder"></div>
         </div>
+        <div class="infoRow infoCol">
+          <div
+            class="infoItem"
+            v-for="(v, i) in $store.state.data.website.infomations">
+            <img :src="v.icon">
+            <p>{{ v.key + '：' + v.value }}</p>
+          </div>
+        </div>
     </div>
   </div>
 </template>

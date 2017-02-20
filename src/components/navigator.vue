@@ -146,4 +146,11 @@ export default {
     }
   }
 }
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .container {
+    display: none;
+  }
+}
 </style>

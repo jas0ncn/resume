@@ -1,7 +1,6 @@
 @import '../../assets/less/animations.less';
 
 .introductions {
-  padding: 40px;
 	background: #516395;
 
   display: flex;
@@ -44,6 +43,53 @@
           justify-content: center;
           align-items: center;
         }
+      }
+
+      .infoCol {
+        margin: 0;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        flex-direction: column;
+        display: none;
+
+        .infoItem {
+          margin-top: 10px;
+          flex-direction: row;
+          justify-content: flex-start;
+
+          p {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .introductions {
+    .pagebody {
+      justify-content: center;
+
+      .selfIntroduction,
+      .selfInformations {
+        margin-top: 10px;
+        padding: 10px;
+
+        width: 94%;
+
+        .infoRow {
+          display: none;
+        }
+
+        .infoCol {
+          display: block;
+        }
+      }
+
+      .selfIntroduction {
+        margin-top: 0;
       }
     }
   }

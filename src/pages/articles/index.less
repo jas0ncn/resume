@@ -3,6 +3,7 @@
 
 	.title {
 		color: #566270;
+		text-shadow: none;
 	}
 
 	.pagebody {
@@ -61,6 +62,41 @@
 
 			&:hover {
 				box-shadow: 0 8px 15px rgba(0,0,0,.2);
+			}
+		}
+	}
+}
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .articles {
+    .pagebody {
+			margin-top: 10px;
+			flex-direction: column;
+			justify-content: flex-start;
+
+			.article {
+				width: 100%;
+				padding: 10px 20px;
+				border-radius: 0;
+				box-shadow: none;
+				border-top: 1px solid #EEE;
+
+				.articleTitle {
+					font-size: 18px;
+				}
+
+				.thumb {
+					display: none;
+				}
+			}
+
+			.article:nth-child(1) {
+				border-radius: 6px 6px 0 0;
+			}
+
+			.article:last-child {
+				border-radius: 0 0 6px 6px;
 			}
 		}
 	}

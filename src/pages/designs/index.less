@@ -142,3 +142,43 @@
 		}
 	}
 }
+
+/* adapt mobile browser */
+@media (max-width: 430px) {
+  .designs {
+    .pagebody {
+			.section {
+				flex-direction: column-reverse !important;
+				justify-content: flex-end;
+
+				.desc {
+					width: 100%;
+
+					.descTitle {
+						font-size: 28px;
+						line-height: 50px;
+					}
+
+					.subTitle {
+						font-size: 18px;
+						line-height: 30px;
+					}
+
+					.description {
+						font-size: 12px;
+						line-height: 20px;
+					}
+				}
+
+				.link {
+					margin: 20px auto;
+				}
+
+				.mockup {
+					height: 200px;
+					user-select: none;
+				}
+			}
+		}
+	}
+}
