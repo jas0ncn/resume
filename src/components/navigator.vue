@@ -8,7 +8,7 @@
         }"
         @click="linkTo(i)"
       >
-        <img :src="`/static/svgs/navigator/${route.path}.svg`">
+        <img :src="`https://cdn.ijason.cc/static/svgs/navigator/${route.path}.svg`">
       </a>
       <span class="description">{{ route[$store.state.lang] }}</span>
     </div>
