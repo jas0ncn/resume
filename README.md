@@ -2,7 +2,7 @@
 
 > My resume powered by vue.js and deploy on ijason.cc
 
-Website: [http://ijason.cc](http://ijason.cc)
+Website: [https://ijason.cc](https://ijason.cc)
 
 ## Build Setup
 
