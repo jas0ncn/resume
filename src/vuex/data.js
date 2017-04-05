@@ -10,7 +10,7 @@ const base = {
   title: 'Jason 的简历',
   name: '陈俊毅',
   shortDescription: '大三学生，前端工程师进阶中...',
-  description: '高中接触 Web 开发和设计，上了大学正式学期前端和 PHP，在学校不间断负责多个公众号、小程序的开发。',
+  description: '高中接触 Web 开发和设计，上了大学正式学习前端、PHP、Node.js，大一开始在校不间断负责多个公众号、小程序的开发。',
   infomations: [{
     icon: 'https://cdn.ijason.cc/static/svgs/info/birthday.svg',
     key: '生日',
@@ -127,35 +127,35 @@ const base = {
     }
   },
   articles: [{
-    title: '【翻译】2017 年前端工程师该学点什么',
-    thumb: '今天看百度的 FEX 技术周刊，看到了一篇文章《What to learn in 2017 if you’re a frontend developer》发现写的很不错！也提供了很多干货，就当做练习阅读能力，便把这篇文章翻译成中文。',
-    url: 'https://blog.ijason.cc/2017/01/03/what-to-learn-in-2017-if-youre-a-frontend-developer.html',
-    time: '2017-01-03'
+    title: 'JavaScript 的事件循环',
+    thumb: '很多人接触到 JavaScript 最开始都会听说一个专业名词——单线程。那么既然是单线程，JavaScript 又是如何做到异步、事件驱动的呢？本篇文章，我们就来讲一讲 JavaScript 的事件循环。',
+    url: 'https://blog.ijason.cc/article/javascript-event-loop',
+    time: '2017-03-14'
   }, {
-    title: 'JavaScript 的 this 指向',
-    thumb: '学一个语言，其实不仅仅是要学会它的语法，其实最重要的还是学会一个语言的思想。在我看来，JavaScript 原因的精髓，就是动态。JavaScript 是著名的弱类型动态语言，动态语言的特性也为 JavaScript 增添了几分趣味性。',
-    url: 'https://blog.ijason.cc/2016/10/30/javascript-this.html',
-    time: '2016-10-30'
+    title: '如何系统的学习前端',
+    thumb: '一个寒假回来，好几个同学都来问我或者自己开始学起了前端，前端入门虽然简单，但是想要做好很难，是一个要通十行才能精一行的工作。再这几年 MVVM 框架的大肆流行，前端已经不是以前用 jQuery 写一写就可以的时代了。于是我写下这篇文章，来给大家一个参考。',
+    url: 'https://blog.ijason.cc/article/how-to-learn-front-end',
+    time: '2017-03-09'
   }, {
-    title: 'yarn 尝鲜',
-    thumb: '看微博的时候无意中看到某个大神转了一条微博说 Facebook 发布了一个新的 JavaScript 包管理工具，一开始没怎么在意，后来在知乎看到了关于 yarn 的问题，就好奇的点了进去，决定来尝鲜一下。',
-    url: 'https://blog.ijason.cc/2016/10/12/have-a-taste-of-yarn.html',
-    time: '2016-10-12'
+    title: '原型链与原型继承',
+    thumb: 'JavaScript 最难最繁复的一个知识点就是原型继承，许多人因为原型继承的原因而认为 JavaScript 是一门不伦不类的面向对象语言，但事实上，原型继承模型比经典的继承模型更强大。这篇文章，来专门讨论讨论 JavaScript 的原型链和原型继承。',
+    url: 'https://blog.ijason.cc/article/prototype-chain-and-prototypal-inheritance',
+    time: '2017-03-04'
   }, {
-    title: '你好，Vue2',
-    thumb: '用 Vue 也有 9 个月了，还记得当时第一次见到双向绑定的欣喜~Vue2 也在万众期待中发布了，基于官方的 Migration from Vue 1.x 来细数一下 Vue2 那些很可能会影响到我们使用的细节。',
-    url: 'https://blog.ijason.cc/2016/10/01/hey-new-vue.html',
-    time: '2016-10-01'
+    title: 'JavaScript 的事件模型',
+    thumb: '事件模型是前端 JavaScript 里面最重要的一个部分，一直以来我都是一知半解，今天特意专门学习了一下，发现遍地的坑，于是写下这篇文章。',
+    url: 'https://blog.ijason.cc/article/javascript-event',
+    time: '2017-03-03'
   }, {
-    title: 'ECMAScript6 学习笔记',
-    thumb: '接触 ES6 也有段时间了，最先的感觉可能是模块化、箭头函数这些的，慢慢也觉得是应该认真的看一看 ES6 本身，在学习的过程中，也就有了这篇文章，所以这篇文章更重要的是提醒我自己关于一些 ES6 的知识点，而不是完整的学习 ES6。',
-    url: 'https://blog.ijason.cc/2016/08/09/es6-note.html',
-    time: '2016-06-16'
+    title: '面试的一些 JavaScript 算法',
+    thumb: '进入春招的季节了，汇总了一些 JavaScript 面试的算法题，有简单有复杂，给出的解法也有多种，如果大家有什么更好的写法，私聊我~',
+    url: 'https://blog.ijason.cc/article/javascript-algorithm',
+    time: '2017-03-02'
   }, {
-    title: 'JSONP新思考：CSST',
-    thumb: '前天早上在逛尤大的微博（@尤小右）的时候，看到他转了一条微博，关于 csst，第一次看到这个词，好奇的点进了 Github 的链接。实践了一把，由此有了这篇博文。',
-    url: 'https://blog.ijason.cc/2016/05/10/new-idea-for-jsonp-csst.html',
-    time: '2016-05-10'
+    title: 'Koa2 源码浅析',
+    thumb: '随着 Node.js 7.6 的发布，async/await 也默认得到了支持，Koa 团队也遵守承诺，正式发布了 2.0 版本的 Koa。所以前几天看了一下 Koa 的源码，写下了这篇文章。',
+    url: 'https://blog.ijason.cc/article/koa-code-review',
+    time: '2017-02-27'
   }]
 }
 

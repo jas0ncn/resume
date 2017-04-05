@@ -25,6 +25,7 @@
             <p>{{ v.key + '：' + v.value }}</p>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </template>
