@@ -6,11 +6,24 @@
 // import route map
 import routeMap from '../router'
 
+const __RES__ = JSON.parse(JSON.stringify(window.__RES__))
+
+const articles = __RES__.contentsSortedByTime.slice(0, 6).map(art => {
+  art = __RES__.contents[art]
+
+  return {
+    title: art.title,
+    thumb: art.desc.slice(0, 200),
+    url: `https://blog.ijason.cc/article/${art.name}`,
+    time: art.mtime
+  }
+})
+
 const base = {
   title: 'Jason 的简历',
   name: '陈俊毅',
-  shortDescription: '大三学生，前端工程师进阶中...',
-  description: '高中接触 Web 开发和设计，上了大学正式学习前端、PHP、Node.js，大一开始在校不间断负责多个公众号、小程序的开发。',
+  shortDescription: '大四学生，前端工程师进阶中...',
+  description: '高中接触 Web 开发和设计，上了大学正式学习前端、PHP、Node.js，大一开始在校不间断负责多个公众号、小程序的开发。目前在腾讯公司 Web 前端开发岗位实习。',
   infomations: [{
     icon: 'https://cdn.ijason.cc/static/svgs/info/birthday.svg',
     key: '生日',
@@ -31,6 +44,10 @@ const base = {
     icon: 'https://cdn.ijason.cc/static/svgs/info/phone.svg',
     key: '手机号',
     value: '+86 13128931074'
+  }, {
+    icon: 'https://cdn.ijason.cc/static/svgs/info/company.svg',
+    key: '公司',
+    value: '腾讯 · 深圳'
   }],
   skills: [{
     value: 'HTML',
@@ -126,44 +143,14 @@ const base = {
       posi: 'left'
     }
   },
-  articles: [{
-    title: 'JavaScript 的事件循环',
-    thumb: '很多人接触到 JavaScript 最开始都会听说一个专业名词——单线程。那么既然是单线程，JavaScript 又是如何做到异步、事件驱动的呢？本篇文章，我们就来讲一讲 JavaScript 的事件循环。',
-    url: 'https://blog.ijason.cc/article/javascript-event-loop',
-    time: '2017-03-14'
-  }, {
-    title: '如何系统的学习前端',
-    thumb: '一个寒假回来，好几个同学都来问我或者自己开始学起了前端，前端入门虽然简单，但是想要做好很难，是一个要通十行才能精一行的工作。再这几年 MVVM 框架的大肆流行，前端已经不是以前用 jQuery 写一写就可以的时代了。于是我写下这篇文章，来给大家一个参考。',
-    url: 'https://blog.ijason.cc/article/how-to-learn-front-end',
-    time: '2017-03-09'
-  }, {
-    title: '原型链与原型继承',
-    thumb: 'JavaScript 最难最繁复的一个知识点就是原型继承，许多人因为原型继承的原因而认为 JavaScript 是一门不伦不类的面向对象语言，但事实上，原型继承模型比经典的继承模型更强大。这篇文章，来专门讨论讨论 JavaScript 的原型链和原型继承。',
-    url: 'https://blog.ijason.cc/article/prototype-chain-and-prototypal-inheritance',
-    time: '2017-03-04'
-  }, {
-    title: 'JavaScript 的事件模型',
-    thumb: '事件模型是前端 JavaScript 里面最重要的一个部分，一直以来我都是一知半解，今天特意专门学习了一下，发现遍地的坑，于是写下这篇文章。',
-    url: 'https://blog.ijason.cc/article/javascript-event',
-    time: '2017-03-03'
-  }, {
-    title: '面试的一些 JavaScript 算法',
-    thumb: '进入春招的季节了，汇总了一些 JavaScript 面试的算法题，有简单有复杂，给出的解法也有多种，如果大家有什么更好的写法，私聊我~',
-    url: 'https://blog.ijason.cc/article/javascript-algorithm',
-    time: '2017-03-02'
-  }, {
-    title: 'Koa2 源码浅析',
-    thumb: '随着 Node.js 7.6 的发布，async/await 也默认得到了支持，Koa 团队也遵守承诺，正式发布了 2.0 版本的 Koa。所以前几天看了一下 Koa 的源码，写下了这篇文章。',
-    url: 'https://blog.ijason.cc/article/koa-code-review',
-    time: '2017-02-27'
-  }]
+  articles
 }
 
 const en = {
   title: `Jason's resume`,
   name: 'Jason Chen',
   shortDescription: 'A student, front-end developer...',
-  description: `I started learning front-end development and participating in development and maintenance of a number of WeChat public accounts in school when I was a freshman at university. At the same time, I began to follow the open source community and the front-end ecosystem closely.`,
+  description: `I started learning front-end development and participating in development and maintenance of a number of WeChat public accounts in school when I was a freshman at university. At the same time, I began to follow the open source community and the front-end ecosystem closely. Now work in Tencent as trainee.`,
   infomations: [{
     icon: 'https://cdn.ijason.cc/static/svgs/info/birthday.svg',
     key: 'Birthday',
@@ -171,11 +158,11 @@ const en = {
   }, {
     icon: 'https://cdn.ijason.cc/static/svgs/info/education.svg',
     key: 'Education',
-    value: 'Communication Engineering · Shenzhen University'
+    value: 'CIE · SZU'
   }, {
     icon: 'https://cdn.ijason.cc/static/svgs/info/nowCity.svg',
     key: 'Live in',
-    value: 'Shenzhen, Guangdong, RPC'
+    value: 'Shenzhen, Guangdong'
   }, {
     icon: 'https://cdn.ijason.cc/static/svgs/info/email.svg',
     key: 'Email',
@@ -184,6 +171,10 @@ const en = {
     icon: 'https://cdn.ijason.cc/static/svgs/info/phone.svg',
     key: 'Phone Number',
     value: '+86 13128931074'
+  }, {
+    icon: 'https://cdn.ijason.cc/static/svgs/info/company.svg',
+    key: 'Company',
+    value: 'Tencent.Inc'
   }],
   projects: [{
     image: 'https://cdn.ijason.cc/static/images/projects/goszu.jpg',

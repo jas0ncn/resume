@@ -73,6 +73,13 @@
     bottom: 20px;
     width: 100%;
     text-align: center;
+    color: #999;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      animation: float 1s infinite ease alternate-reverse;
+    }
 
     a {
       color: #999;
@@ -146,3 +153,13 @@
   }
 }
 /* social icon end*/
+
+/* animation */
+@keyframes float {
+  0% {
+    transform: translateY(-5px)
+  }
+  100% {
+    transform: translateY(5px)
+  }
+}
